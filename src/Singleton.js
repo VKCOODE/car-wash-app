@@ -3,15 +3,10 @@ import * as constants from './Constants';
 import { Alert, Platform, Share } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
 
-const { io } = require('socket.io-client');
 
 
-export const socket_url = 'wss://api.stage-myc0in.xyz/';
 
-// https://ws-stage.bitqik.net/
 
-// wss://api.stage-myc0in.xyz/socket.io/?EIO=4&transport=websocket
-export const socket_ticker_url = 'wss://stream.binance.com:9443/ws/';
 
 export default class Singleton {
   static myInstance = null;
