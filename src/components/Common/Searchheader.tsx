@@ -14,7 +14,7 @@ const Searchheader = (props: any) => {
         <View style={{flexDirection:'row', marginTop:15, justifyContent:'center', alignItems:'center' }}>
             {/* ////////////////////////////////SEARCH BAr///////////////////////////////// */}
             <TouchableOpacity onPress={()=>Actions.pop()}>
-            <Image source={Images.backarw} style={{tintColor:'#fff', height:20, width:24,right:12 }} />
+            <Image source={Images.backarw} style={{tintColor:'#fff',resizeMode:"contain",  height:20, width:24,right:12 }} />
             </TouchableOpacity>
             
             <View style={{ alignItems: 'center', flexDirection: 'row',  height: 63, backgroundColor: '#fff', maxHeight: 60, width: '80%', borderRadius: 50 }}>

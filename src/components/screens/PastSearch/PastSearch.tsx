@@ -19,9 +19,7 @@ const PastSearch = (props: any) => {
   const [phoneNumber, setphoneNumber] = useState('');
   const [password, setPassword] = useState('');
 
-  const goTonext = () => {
-    Actions.Dashboard()
-  }
+
 
   const sections = [
     { title: 'Sort', image: Images.wash },
@@ -235,7 +233,8 @@ const PastSearch = (props: any) => {
       time: '8:00 AM - 9:00 PM',
       distance: '5 k.m.',
       shopImage: Images.worker,
-      rating: Images.ratingstar
+      rating: Images.ratingstar,
+      ratingnum:'5'
     },
 
 
@@ -245,7 +244,9 @@ const PastSearch = (props: any) => {
   const renderSearchDataSection = ({ item, index }) => {
     return (
       <View style={{ width:'100%',  }}>
-        <TouchableOpacity style={{
+        <TouchableOpacity 
+        onPress={()=>Actions.ServiceCenter({item:item})}
+        style={{
           flexDirection: 'row',
          width:'100%', borderColor:'#EBEBEB',  borderRadius:10,borderWidth:0.5,  elevation:1,backgroundColor:'#fff',shadowColor:colors.primaryBlue,  marginBottom:10 }}>
           <View style={{ height: 122,width:'35%',   }}>
@@ -253,8 +254,17 @@ const PastSearch = (props: any) => {
           </View>
           
           <View style={{ height: 122,width:'60%',   }}>
+            <View style={{flexDirection:'row',justifyContent:'space-between',   height:23, marginTop:3}}>
             <BoldText style={{fontSize:16}}>{item.servicecenter}</BoldText>
-            <Regulartext>{item.location}</Regulartext>
+            
+            <View style={{flexDirection:'row', justifyContent: 'center', height:22,alignItems:'center', justifyContent:'center',  width:24, borderRadius:5, backgroundColor:'green'}}>
+            <BoldText style={{fontSize:12, color:'#fff'}}>{'5'}</BoldText>
+            <Image source={Images.ratingstart} style={{marginLeft:1,  height: 8, width: 8,resizeMode:'contain' }} />
+           
+            </View>
+
+            </View>
+            <Regulartext  style={{fontSize:12,}}>{item.location}</Regulartext>
             <Regulartext style={{fontSize:16, color:'black'}}>$ {item.price}<Regulartext> {item.shopStatus}</Regulartext></Regulartext>
             <Regulartext style={{fontSize:10, color:'black'}}>{item.servicedetail}</Regulartext>
             <Regulartext style={{fontSize:10, }}>{item.days} {item.time}</Regulartext>

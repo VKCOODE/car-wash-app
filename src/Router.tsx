@@ -1,6 +1,6 @@
 import React from 'react';
 import { Scene, Router, Actions, Tabs } from 'react-native-router-flux';
-import { BackHandler, Alert } from 'react-native';
+import {  Alert } from 'react-native';
 import {
   Welcome,
   Splash
@@ -11,12 +11,13 @@ import Dashboard from './components/screens/Dashboard/Dashboard';
 import Home from './components/screens/Home/Home';
 import MianSearch from './components/screens/MianSearch/MianSearch';
 import PastSearch from './components/screens/PastSearch/PastSearch';
+import ServiceCenter from './components/screens/ServiceCenter/ServiceCenter';
+import MyBookings from './components/screens/MyBookings/MyBookings';
+import MyBookingsDetails from './components/screens/MyBookingsDetails/MyBookingsDetails';
+import Profile from './components/screens/Profile/Profile';
 
 const RouterComponent = ({ onRouteChanged }: any) => {
-  function handleBackButton() {
-    BackHandler.exitApp();
-    return true;
-  }`  `
+
   return (
     <Router
       onStateChange={onRouteChanged}
@@ -57,6 +58,14 @@ const RouterComponent = ({ onRouteChanged }: any) => {
           gestureEnable={false}
           panHandlers={null}
         />
+        <Scene
+          key="Profile"
+          hideNavBar={true}
+          component={Profile}
+          gestureEnable={false}
+          panHandlers={null}
+        />
+        
              <Scene
           key="PastSearch"
           hideNavBar={true}
@@ -64,6 +73,29 @@ const RouterComponent = ({ onRouteChanged }: any) => {
           gestureEnable={false}
           panHandlers={null}
         />
+         <Scene
+          key="ServiceCenter"
+          hideNavBar={true}
+          component={ServiceCenter}
+          gestureEnable={false}
+          panHandlers={null}
+        />
+         <Scene
+          key="MyBookings"
+          hideNavBar={true}
+          component={MyBookings}
+          gestureEnable={false}
+          panHandlers={null}
+        />
+           <Scene
+          key="MyBookingsDetails"
+          hideNavBar={true}
+          component={MyBookingsDetails}
+          gestureEnable={false}
+          panHandlers={null}
+        />
+
+
         
         <Scene
           key="Dashboard"

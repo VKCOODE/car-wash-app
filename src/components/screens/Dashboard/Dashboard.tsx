@@ -58,26 +58,26 @@ const Dashboard = (props: any) => {
   }
 
 
-  useEffect(() => {
-    const backAction = () => {
-      Alert.alert('CWF', 'Are you sure you want to go back?', [
-        {
-          text: 'Cancel',
-          onPress: () => null,
-          style: 'cancel',
-        },
-        { text: 'YES', onPress: () => BackHandler.exitApp() },
-      ]);
-      return true;
-    };
+  // useEffect(() => {
+  //   const backAction = () => {
+  //     Alert.alert('CWF', 'Are you sure you want to go back?', [
+  //       {
+  //         text: 'Cancel',
+  //         onPress: () => null,
+  //         style: 'cancel',
+  //       },
+  //       { text: 'YES', onPress: () => BackHandler.exitApp() },
+  //     ]);
+  //     return true;
+  //   };
 
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      backAction,
-    );
+  //   const backHandler = BackHandler.addEventListener(
+  //     'hardwareBackPress',
+  //     backAction,
+  //   );
 
-    return () => backHandler.remove();
-  }, []);
+  //   return () => backHandler.remove();
+  // }, []);
 
   const renderSection = ({ item, index }) => {
 
@@ -117,7 +117,7 @@ const Dashboard = (props: any) => {
             <BoldText style={{ fontSize: 20, }}>{'Vehicle'}</BoldText>
             <View style={{ marginTop: 20 }}>
               <SelectDropdown
-                defaultButtonText='Select Brand & name'
+                defaultButtonText='  Select Brand & name'
                 dropdownStyle={styles.dropdown}
                 selectedRowTextStyle={styles.selectedtext}
                 rowTextStyle={styles.rowtextstyle}
